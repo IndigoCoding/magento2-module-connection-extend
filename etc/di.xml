@@ -1,0 +1,14 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Framework\Config\Dom" type="Indigo\ConnectionExtend\Config\Dom"/>
+    <preference for="Magento\Framework\Config\Reader\Filesystem" type="Indigo\ConnectionExtend\Config\Reader\Filesystem"/>
+    <type name="Magento\Framework\Config\Reader\Filesystem">
+        <arguments>
+            <argument name="domDocumentClass" xsi:type="string">Indigo\ConnectionExtend\Config\Dom</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Backend\Model\Menu\Config\Reader">
+        <arguments>
+            <argument name="domDocumentClass" xsi:type="string">Indigo\ConnectionExtend\Config\Menu\Dom</argument>
+        </arguments>
+    </type>
+</config>
