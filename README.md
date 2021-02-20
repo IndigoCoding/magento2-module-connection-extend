@@ -17,7 +17,7 @@ Magento 2.3+ (Tested with Magento 2.3.0 EE, 2.3.4 CE and 2.4.0 CE)
 Run the following command under your Magento 2 root dir:
 
 ```
-composer require indigo/module-connection-extend
+composer require indigocoding/module-connection-extend
 php bin/magento maintenance:enable
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
