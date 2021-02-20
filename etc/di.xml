@@ -11,4 +11,7 @@
             <argument name="domDocumentClass" xsi:type="string">Indigo\ConnectionExtend\Config\Menu\Dom</argument>
         </arguments>
     </type>
+    <type name="Magento\Framework\Setup\Declaration\Schema\Sharding">
+        <plugin name="add_resource_to_sharding" type="Indigo\ConnectionExtend\Plugin\AddResourceToSharding" sortOrder="1" disabled="false"/>
+    </type>
 </config>
