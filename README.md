@@ -2,10 +2,10 @@
 
 ---
 
-This extension helps with using multiple user-defined connections/resources for declarative schema instead of only the 
-3 default resources (default, checkout, sales).
+This extension helps with using user-defined connections/resources name in declarative schema (e.g: db_schema.xml) 
+instead of only the 3 default resources (default, checkout, sales).
 
-This extension is to be used by developers for easier development. Work with both Magento 2 Open Source and 
+This extension is meant to be used by developers for easier development. Work with both Magento 2 Open Source and 
 Commerce.
 
 ---
