@@ -14,4 +14,44 @@
     <type name="Magento\Framework\Setup\Declaration\Schema\Sharding">
         <plugin name="add_resource_to_sharding" type="Indigo\ConnectionExtend\Plugin\AddResourceToSharding" sortOrder="1" disabled="false"/>
     </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote\Address">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote\Address\Item">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote\Address\Rate">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote\Item">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote\Item\Option">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote\Payment">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
+    <type name="\Magento\Quote\Model\ResourceModel\Quote\QuoteIdMask">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">checkout</argument>
+        </arguments>
+    </type>
 </config>

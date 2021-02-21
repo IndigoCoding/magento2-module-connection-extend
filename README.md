@@ -2,7 +2,7 @@
 
 ---
 
-This extension helps with using user-defined connections/resources name in declarative schema (e.g: db_schema.xml) 
+This extension helps with using split database (checkout, sales) for Magento CE, and user-defined resources name in declarative schema (e.g: db_schema.xml) 
 instead of only the 3 default resources (default, checkout, sales).
 
 This extension is meant to be used by developers for easier development. Work with both Magento 2 Open Source and 
@@ -39,14 +39,23 @@ php bin/magento cache:flush
 ```
 
 ## Usage
+### Magento split database (checkout, sales) for Magento Open Source
 
-After the installation, Go to The Magento 2 admin panel
+After the installation, setup sales and/or checkout connection(s) and resource(s) by modifying app/etc/env.php file, and 
+create schemas (defined in env.php) + grant permission to database user.
+
+If module PayPal_Braintree is enabled, delete its entry in setup_module table.
+
+Run php bin/magento setup:upgrade.
+
+### User-defined resources
+After the installation, Go to The Magento 2 admin panel.
 
 Go to Stores -> Settings -> Configuration, under tab Advanced -> System -> Connection Extend Configuration. In
 Connection Extend List setting, enter the list of resource name as string, separated by a comma.
 
 Setup new connection and resource by modifying app/etc/env.php file (new resource key must be the same as configured 
-above)
+above), and creating schema (defined in env.php) + grant permission to database user.
 
 Put the new resource name in db_schema.xml file whenever needed and enjoy!
 

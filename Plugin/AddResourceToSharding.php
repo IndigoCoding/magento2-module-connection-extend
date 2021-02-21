@@ -17,6 +17,8 @@ class AddResourceToSharding {
      */
     private $scopeConfig;
 
+    const otherDefaultResources = ['sales', 'checkout'];
+
     public function __construct
     (
         DeploymentConfig $deploymentConfig,
@@ -28,13 +30,18 @@ class AddResourceToSharding {
     }
 
     public function afterGetResources(\Magento\Framework\Setup\Declaration\Schema\Sharding $subject, $resources){
+        $finalResources = [];
         $resourceList = $this->scopeConfig->getValue(\Indigo\ConnectionExtend\Config\Dom::configPath);
         foreach(explode(',', $resourceList) as $resource){
+            $resources[] = $resource;
+        }
+        $resources = array_merge($resources, array_diff(self::otherDefaultResources, $resources));
+        foreach($resources as $resource){
             if($this->canUseResource($resource)){
-                $resources[] = $resource;
+                $finalResources[] = $resource;
             }
         }
-        return $resources;
+        return $finalResources;
     }
 
     /**
